@@ -57,6 +57,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+GDAL_LIBRARY_PATH = "C:/OSGeo4W/bin/gdal310.dll"
+PROJ_LIB = r"C:\Program Files\PostgreSQL\17\share\contrib\postgis-3.5\proj"
+
+
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
