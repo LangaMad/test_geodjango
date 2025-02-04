@@ -12,9 +12,17 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+if os.name == 'nt':
+    OSGEO4W_ROOT = config('OSGEO4W_ROOT')
+    GDAL_DATA = config('GDAL_DATA')
+    PROJ_LIB = config('PROJ_LIB')
+    PATH = config('PATH')
+    GDAL_LIBRARY_PATH='C:/OSGeo4W/bin/gdal310.dll'
 
 
 # Quick-start development settings - unsuitable for production
@@ -58,8 +66,8 @@ MIDDLEWARE = [
 ]
 
 
-GDAL_LIBRARY_PATH = "C:/OSGeo4W/bin/gdal310.dll"
-PROJ_LIB = r"C:\Program Files\PostgreSQL\17\share\contrib\postgis-3.5\proj"
+
+
 
 
 ROOT_URLCONF = 'core.urls'
